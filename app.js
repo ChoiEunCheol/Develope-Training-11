@@ -2,7 +2,6 @@ const http = require("http");
 const fs = require("fs");
 const querysrting = require("querystring");
 const signUpAsset = require("./signUpAsset")
-const passport = require('passport');
 
 http
   .createServer((req, res) => {
@@ -21,3 +20,5 @@ http
         res.write(signUpAsset.id);
         res.end("ㅇㅇ")};
     }).listen(8080, () => console.log(`http://localhost:8080`));
+
+    //https://cocoon1787.tistory.com/517

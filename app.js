@@ -24,7 +24,7 @@ http
         
           let data = querysrting.parse(chunk.toString());
 
-          fs.writeFile("signUpAsset.js",data.id,(err)=>{
+          fs.writeFile("signUpAsset.js",`const signUpAsset = { id: '${data.id}', pw: '${data.pw}', repw: '${data.repw}', email: '${data.email}' }`,(err)=>{
             if(err){
               console.err("Error");
             } else {

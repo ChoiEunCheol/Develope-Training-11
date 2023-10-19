@@ -1,6 +1,7 @@
 const http = require("http");
 const fs = require("fs");
 const querysrting = require("querystring");
+const aaa = require("./login");
 // const signUpAsset = require("./signUpAsset")
 
 http
@@ -16,11 +17,13 @@ http
       });
     } else if (req.method === "POST" && req.url === "/login") {
       req.on("data", function (chunk) {
-        console.log("chunk :", chunk);
-        console.log("chunk.toString() :", chunk.toString());
-        console.log("parse(chunk) :", querysrting.parse(chunk));
-        console.log("parse(chunk.toString()) :",querysrting.parse(chunk.toString())
-        );
+        // console.log("chunk :", chunk);
+        // console.log("chunk.toString() :", chunk.toString());
+        // console.log("parse(chunk) :", querysrting.parse(chunk));
+        // console.log(
+        //   "parse(chunk.toString()) :",
+        //   querysrting.parse(chunk.toString())
+        // );
 
         let data = querysrting.parse(chunk.toString());
 
@@ -34,11 +37,26 @@ module.exports = signUpAsset;`,
             } else {
               console.log("signUpAsset.js파일 생성");
               const signUpAsset = require("./signUpAsset");
-              res.writeHead(200, { "Content-Type": "text/html" });
-              res.end("id : " + signUpAsset.id + "pw : " + signUpAsset.pw);
             }
           }
         );
+        if (true) {
+          fs.readFile("./login.html", (err, a) => {
+            if (data.pw === data.repw) {
+              fs.readFile("./Develope-Training-11.html", (err, data) => {
+                if (err) {
+                  console.log("html파일을 찾을 수 없습니다.");
+                } else {
+                  res.writeHead(200, { "Content-Type": "text/html" });
+                  res.end(data);
+                }
+              });
+            } else {
+              res.writeHead(200, { "Content-Type": "text/html" });
+              res.end(aaa);
+            }
+          });
+        }
       });
     }
   })

@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+const signUpAsset = require("./signUpAsset");
+
+const aaa =`<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,13 +8,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./login.css">
+    // <link rel="stylesheet" href="./login.css">
 </head>
 
 <body>
     <div id="root">
         <div>
-            <div id="loginName"></div>
+            <div id="loginName">${signUpAsset.id}</div>
             <h1> 님 반갑습니다.</h1>
         </div><br>
         <h1>저에게 편지를 보내주세요!</h1>
@@ -24,4 +26,6 @@
     </div>
 </body>
 
-</html>
+</html>`
+
+module.exports = aaa;

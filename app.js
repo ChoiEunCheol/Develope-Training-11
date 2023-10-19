@@ -22,6 +22,6 @@ http
         res.writeHead(200, {'Content-Type' : 'text/html'});
         res.end('ID : ' + data.id + 'PW : ' + data.pw);
     });
+    // res.writeHead(200, {'Content-Type' : 'text/html'});
+    // res.end('ID : ' + data.id + 'PW : ' + data.pw);
       }}).listen(8080, () => console.log(`http://localhost:8080`));
-
-    //https://cocoon1787.tistory.com/517

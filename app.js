@@ -1,7 +1,7 @@
 const http = require("http");
 const fs = require("fs");
 const querysrting = require("querystring");
-const signUpAsset = require("./signUpAsset");
+
 // const signUpAsset = require("./signUpAsset")
 
 http
@@ -29,16 +29,16 @@ http
 
         fs.writeFile(
           "signUpAsset.js",
-          `const signUpAsset = { id: '${data.id}', pw: '${data.pw}', repw: '${data.repw}', email: '${data.email}' }`,
+          `const signUpAsset = { id: '${data.id}', pw: '${data.pw}', repw: '${data.repw}', email: '${data.email}' }
+module.exports = signUpAsset;`,
           (err) => {
             if (err) {
               console.err("Error");
             } else {
               console.log("signUpAsset.js파일 생성");
+              const signUpAsset = require("./signUpAsset");
               res.writeHead(200, { "Content-Type": "text/html" });
-              res.end(
-                "id : " + signUpAsset.id + "pw : " + signUpAsset.password
-              );
+              res.end("id : " + signUpAsset.id + "pw : " + signUpAsset.pw);
             }
           }
         );

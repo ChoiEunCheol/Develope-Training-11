@@ -18,7 +18,7 @@ http
     else if (req.method === "POST" && req.url === "/login") {
       req.on('data', function(chunk){
         console.log('chunk :',chunk);
-        console.log('parse(chunk) :', parse(chunk));
+        console.log('parse(chunk) :', querysrting.parse(chunk));
         console.log(chunk.toString());
         var data = querysrting.parse(chunk.toString());
         res.writeHead(200, {'Content-Type' : 'text/html'});

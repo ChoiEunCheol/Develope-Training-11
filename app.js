@@ -25,7 +25,7 @@ http
           var data = querysrting.parse(chunk.toString());
 
           signUpAsset.id = data.id ; 
-          signUpAsset.password = data.password ; 
+          signUpAsset.password = data.pw ; 
           signUpAsset.email = data.email ; 
 
           res.writeHead(200, {'Content-Type' : 'text/html'});

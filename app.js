@@ -1,6 +1,7 @@
 const http = require("http");
 const fs = require("fs");
 const querysrting = require("querystring");
+const signUpAsset = require("./signUpAsset")
 
 http
   .createServer((req, res) => {
@@ -16,5 +17,8 @@ http
     }
     else if (req.method === "POST" && req.url === "/login") {
         res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
+        res.write(signUpAsset.id);
         res.end("ㅇㅇ")};
     }).listen(8080, () => console.log(`http://localhost:8080`));
+
+    //https://cocoon1787.tistory.com/517

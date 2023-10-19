@@ -1,7 +1,7 @@
 const http = require("http");
 const fs = require("fs");
 const querysrting = require("querystring");
-const aaa = require("./login");
+const sss = require("./login");
 // const signUpAsset = require("./signUpAsset")
 
 http
@@ -17,13 +17,13 @@ http
       });
     } else if (req.method === "POST" && req.url === "/login") {
       req.on("data", function (chunk) {
-        // console.log("chunk :", chunk);
-        // console.log("chunk.toString() :", chunk.toString());
-        // console.log("parse(chunk) :", querysrting.parse(chunk));
-        // console.log(
-        //   "parse(chunk.toString()) :",
-        //   querysrting.parse(chunk.toString())
-        // );
+        console.log("chunk :", chunk);
+        console.log("chunk.toString() :", chunk.toString());
+        console.log("parse(chunk) :", querysrting.parse(chunk));
+        console.log(
+          "parse(chunk.toString()) :",
+          querysrting.parse(chunk.toString())
+        );
 
         let data = querysrting.parse(chunk.toString());
 
@@ -53,7 +53,7 @@ module.exports = signUpAsset;`,
               });
             } else {
               res.writeHead(200, { "Content-Type": "text/html" });
-              res.end(aaa);
+              res.end(sss);
             }
           });
         }

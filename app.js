@@ -24,6 +24,14 @@ http
         
           let data = querysrting.parse(chunk.toString());
 
+          fs.writeFile("signUpAsset.js",data.id,(err)=>{
+            if(err){
+              console.err("Error");
+            } else {
+              console.log("signUpAsset.js파일 생성");
+            }
+          });
+
           signUpAsset.id = data.id ; 
           signUpAsset.password = data.pw ; 
           signUpAsset.email = data.email ; 

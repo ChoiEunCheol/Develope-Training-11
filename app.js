@@ -16,9 +16,12 @@ http
       });
     }
     else if (req.method === "POST" && req.url === "/login") {
-        res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
-        res.write(signUpAsset.id);
-        res.end("ㅇㅇ")};
-    }).listen(8080, () => console.log(`http://localhost:8080`));
+      req.on('data', function(chunk){
+        console.log(chunk.toString());
+        var data = querysrting.parse(chunk.toString());
+        res.writeHead(200, {'Content-Type' : 'text/html'});
+        res.end('ID : ' + data.id + 'PW : ' + data.pw);
+    });
+      }}).listen(8080, () => console.log(`http://localhost:8080`));
 
     //https://cocoon1787.tistory.com/517

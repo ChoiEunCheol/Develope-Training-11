@@ -22,7 +22,7 @@ http
           console.log('parse(chunk) :', querysrting.parse(chunk));
           console.log('parse(chunk.toString()) :', querysrting.parse(chunk.toString()));
         
-          var data = querysrting.parse(chunk.toString());
+          let data = querysrting.parse(chunk.toString());
 
           signUpAsset.id = data.id ; 
           signUpAsset.password = data.pw ; 

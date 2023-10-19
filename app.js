@@ -1,7 +1,6 @@
 const http = require("http");
 const fs = require("fs");
 const querysrting = require("querystring");
-
 // const signUpAsset = require("./signUpAsset")
 
 http
@@ -20,9 +19,7 @@ http
         console.log("chunk :", chunk);
         console.log("chunk.toString() :", chunk.toString());
         console.log("parse(chunk) :", querysrting.parse(chunk));
-        console.log(
-          "parse(chunk.toString()) :",
-          querysrting.parse(chunk.toString())
+        console.log("parse(chunk.toString()) :",querysrting.parse(chunk.toString())
         );
 
         let data = querysrting.parse(chunk.toString());

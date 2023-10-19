@@ -1,6 +1,7 @@
 const http = require("http");
 const fs = require("fs");
 const querysrting = require("querystring");
+const signUpAsset = require("./signUpAsset");
 // const signUpAsset = require("./signUpAsset")
 
 http
@@ -22,8 +23,13 @@ http
           console.log('parse(chunk.toString()) :', querysrting.parse(chunk.toString()));
         
           var data = querysrting.parse(chunk.toString());
+
+          signUpAsset.id = data.id ; 
+          signUpAsset.password = data.password ; 
+          signUpAsset.email = data.email ; 
+
           res.writeHead(200, {'Content-Type' : 'text/html'});
-          res.end(data.id + data.pw);
+          res.end('id : '+ signUpAsset.id + 'pw : ' + signUpAsset.pw);
           console.log('data :', data);
       });
     }

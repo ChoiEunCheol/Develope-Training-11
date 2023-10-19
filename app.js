@@ -17,10 +17,11 @@ http
     }
     else if (req.method === "POST" && req.url === "/login") {
       req.on('data', function(chunk){
+        console.log(chunk)
         console.log(chunk.toString());
         var data = querysrting.parse(chunk.toString());
         res.writeHead(200, {'Content-Type' : 'text/html'});
-        res.end('ID : ' + data.id + 'PW : ' + data.pw);
+        res.end(data.id + data.pw);
     });
     // res.writeHead(200, {'Content-Type' : 'text/html'});
     // res.end('ID : ' + data.id + 'PW : ' + data.pw);

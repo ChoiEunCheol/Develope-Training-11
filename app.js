@@ -47,9 +47,9 @@ module.exports = signUpAsset;`,
             } else {
               console.log("signUpAsset.js파일 생성");
               const signUpAsset = require("./signUpAsset");
-              const sss = require("./login");
+              const loginPage = require("./login");
               res.writeHead(200, { "Content-Type": "text/html" });
-              res.end(sss);
+              res.end(loginPage);
             }
           }
         );

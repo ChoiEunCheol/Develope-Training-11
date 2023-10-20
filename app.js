@@ -15,7 +15,16 @@ http
         }
       });
     }
-     
+    else if (req.method === "GET" && req.url === "/script/checkingInfo.js"){
+      fs.readFile('./script/checkingInfo.js', 'utf8', (err, data) => {
+        if (err) {
+          console.log("js파일을 찾을 수 없습니다.")
+        } else{
+        res.writeHead(200, { 'Content-Type': 'application/javascript' });
+        res.end(data);
+        }
+      });
+    }
     else if (req.method === "POST" && req.url === "/login") {
       req.on("data", function (chunk) {
         console.log("chunk :", chunk);
@@ -38,7 +47,6 @@ module.exports = signUpAsset;`,
             } else {
               console.log("signUpAsset.js파일 생성");
               const signUpAsset = require("./signUpAsset");
-
               const sss = require("./login");
               res.writeHead(200, { "Content-Type": "text/html" });
               res.end(sss);

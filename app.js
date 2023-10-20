@@ -46,7 +46,6 @@ module.exports = signUpAsset;`,
               console.err("Error");
             } else {
               console.log("signUpAsset.js파일 생성");
-              const signUpAsset = require("./signUpAsset");
               const loginPage = require("./login");
               res.writeHead(200, { "Content-Type": "text/html" });
               res.end(loginPage);

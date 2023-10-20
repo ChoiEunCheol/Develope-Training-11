@@ -6,7 +6,6 @@ function submitdisabled(x) {
   submit.disabled = x;
 }
 
-
 // 유효성 검사
 inputTag[0].onchange = () => {
   switch (true) {
@@ -45,7 +44,14 @@ inputTag[3].onchange = () => {
   
   if (dot > 0 && atsign > 0 && dot > atsign){
     submitdisabled(false);
-  } else {
+  } 
+  else {
     submitdisabled(true);
   }
 };
+
+submit.addEventListener('click',()=>{
+  if(inputTag[0].value === "" || inputTag[1].value === "" || inputTag[2].value === "" || inputTag[3].value === ""){
+    submitdisabled(true);
+  }
+})

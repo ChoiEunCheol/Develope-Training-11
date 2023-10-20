@@ -6,6 +6,7 @@ function submitdisabled(x) {
   submit.disabled = x;
 }
 
+
 // 유효성 검사
 inputTag[0].onchange = () => {
   switch (true) {

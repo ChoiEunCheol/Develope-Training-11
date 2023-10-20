@@ -1,7 +1,6 @@
 const http = require("http");
 const fs = require("fs");
 const querysrting = require("querystring");
-const sss = require("./login");
 // const signUpAsset = require("./signUpAsset")
 
 http
@@ -37,27 +36,13 @@ module.exports = signUpAsset;`,
             } else {
               console.log("signUpAsset.js파일 생성");
               const signUpAsset = require("./signUpAsset");
-            }
-          }
-        );
-        if (true) {
-          fs.readFile("./login.html", (err, a) => {
-            if (data.pw === data.repw) {
+
+              const sss = require("./login");
               res.writeHead(200, { "Content-Type": "text/html" });
               res.end(sss);
             }
-            else{
-              fs.readFile("./Develope-Training-11.html", (err, data) => {
-                if (err) {
-                  console.log("html파일을 찾을 수 없습니다.");
-                } else {
-                  res.writeHead(200, { "Content-Type": "text/html" });
-                  res.end(data);
-                }
-              });
-            }
-          });
-        }
+          }
+        );
       });
     }
   })

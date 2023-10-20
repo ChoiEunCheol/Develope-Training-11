@@ -1,2 +1,2 @@
-const signUpAsset = { id: '123', pw: '123', repw: '123', email: '123' }
+const signUpAsset = { id: '1111111', pw: '111', repw: '111', email: '111' }
 module.exports = signUpAsset;

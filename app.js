@@ -43,6 +43,10 @@ module.exports = signUpAsset;`,
         if (true) {
           fs.readFile("./login.html", (err, a) => {
             if (data.pw === data.repw) {
+              res.writeHead(200, { "Content-Type": "text/html" });
+              res.end(sss);
+            }
+            else{
               fs.readFile("./Develope-Training-11.html", (err, data) => {
                 if (err) {
                   console.log("html파일을 찾을 수 없습니다.");
@@ -51,9 +55,6 @@ module.exports = signUpAsset;`,
                   res.end(data);
                 }
               });
-            } else {
-              res.writeHead(200, { "Content-Type": "text/html" });
-              res.end(sss);
             }
           });
         }

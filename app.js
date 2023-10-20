@@ -24,6 +24,15 @@ http
         res.end(data);
         }
       });
+    }    else if (req.method === "GET" && req.url === "/style/login.css"){
+      fs.readFile('./style/login.css', 'utf8', (err, data) => {
+        if (err) {
+          console.log("css파일을 찾을 수 없습니다.")
+        } else{
+        res.writeHead(200, {'Content-Type': 'text/css'  });
+        res.end(data);
+        }
+      });
     }
     else if (req.method === "POST" && req.url === "/login") {
       req.on("data", function (chunk) {

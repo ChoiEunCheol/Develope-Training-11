@@ -52,6 +52,7 @@ inputTag[3].onchange = () => {
 
 submit.addEventListener('click',()=>{
   if(inputTag[0].value === "" || inputTag[1].value === "" || inputTag[2].value === "" || inputTag[3].value === ""){
+    alert("값을 제대로 입력해주세요");
     submitdisabled(true);
   }
 })
